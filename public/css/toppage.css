@@ -1,0 +1,116 @@
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 70px;
+  display:table;
+  background-color: #757575;
+  color: #FFF;
+}
+header div{
+  position:relative;
+  display:table-cell;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+header .logo-img{
+  font-family: 'Tillana', cursive;
+  padding-left: 5px;
+  width:200px;
+  height:70px;
+  font-size: 30px;
+  /*background: url('/logo.png');
+  background-size: contain;
+  background-position:center;*/
+}
+header .buildname{
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  width: 100px;
+}
+.buildname p{
+  font-size: 12px;
+  margin:0;
+  padding: 0;
+  padding-top: 4px;
+}
+nav {
+  font-family: 'Orbitron', sans-serif;
+  width: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #212121;
+  color: white;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.4);
+}
+nav ul{
+  position:relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  display:table;
+  text-align: center;
+}
+nav ul li{
+  position: relative;
+  display:table-cell;
+  opacity: 1;
+  vertical-align: middle;
+}
+nav ul p{
+  position: relative;
+  display:table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+nav ul li:hover{
+  background-color: #424242;
+}
+
+.headphone-content{
+  position:relative;
+  top:100px;
+  margin: 0;
+  width: 100%;
+  height: 200px;
+  display: table;
+  text-align: center;
+}
+
+.content-list{
+  position: relative;
+  height: 200px;
+  display: table-cell;
+  vertical-align: middle;
+  width: auto;
+}
+
+.content-list-inner{
+  position:absolute;
+  top: 0;
+  height: 200px;
+  width: 200px;
+  background: url("/img/MDR-Z1000.jpg");
+  background-size: cover;
+  background-position:center;
+}
+.content-prevnext{
+  position:relative;
+  height: 200px;
+  width: 50px;
+  display: table-cell;
+  background-color: #AAA;
+  vertical-align: middle;
+  color: #FFF;
+  font-size: 40px;
+	-webkit-text-stroke: 2px #333;
+}
