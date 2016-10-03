@@ -43,6 +43,7 @@ header .buildname{
   padding-top: 4px;
 }
 nav {
+  position:relative;
   font-family: 'Orbitron', sans-serif;
   width: auto;
   padding-left: 30px;
@@ -76,41 +77,71 @@ nav ul li:hover{
   background-color: #424242;
 }
 
+main h2{
+  position:relative;
+  top:50px;
+  left: 50px;
+  font-family: 'Orbitron', sans-serif;
+}
+
 .headphone-content{
   position:relative;
-  top:100px;
+  top:50px;
   margin: 0;
+  margin-bottom: 100px;
   width: 100%;
   height: 200px;
   display: table;
   text-align: center;
 }
 
-.content-list{
-  position: relative;
+.content-list,.content-list-e{
+  transition: left 0.3s ease;
+  position: absolute;
+  left:150px;
   height: 200px;
-  display: table-cell;
   vertical-align: middle;
-  width: auto;
+  width: 0px;
 }
 
 .content-list-inner{
-  position:absolute;
-  top: 0;
+  position: absolute;
   height: 200px;
   width: 200px;
   background: url("/img/MDR-Z1000.jpg");
   background-size: cover;
   background-position:center;
 }
+
+.inner-hidden{
+  position: relative;
+  top: 150px;
+  width: 200px;
+  height: 50px;
+  color:#FFF;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  background-color: #000;
+}
 .content-prevnext{
   position:relative;
   height: 200px;
   width: 50px;
   display: table-cell;
-  background-color: #AAA;
+  background-color: #444;
   vertical-align: middle;
   color: #FFF;
   font-size: 40px;
-	-webkit-text-stroke: 2px #333;
+  font-weight:600;
+  opacity: 0.5;
+  z-index: 10;
+}
+.content-prevnext:hover{
+  opacity: 0.8;
+}
+
+footer{
+  height: 200px;
+  width: 100%;
+  background-color: #000;
 }

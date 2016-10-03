@@ -5,8 +5,8 @@
     <title></title>
     <link rel="stylesheet" href="css/toppage.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Tillana" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="js/toppage.js"></script>
   </head>
   <body>
@@ -34,12 +34,38 @@
     </nav>
 
     <main>
+      <h2>HEADPHONE</h2>
       <div class="headphone-content">
-        <div class="content-prevnext">&lt;</div>
-        <div v-for="list in headphone" class="content-list">
-          <div class="content-list-inner" style="left:@{{ space }}px">@{{ list }}</div>
+        <div class="content-prevnext prev">&lt;</div>
+        <div v-for="list in headphone"  class="content-list">
+          <div class="content-list-inner"
+            style="
+            left : @{{ $index*200 }}px;
+            background : url('/img/@{{list.imageurl}}'),url('/img/MDR-Z1000.jpg');
+            background-size: cover;
+            background-position:center;
+            ">
+          </div>
+          <div class="inner-hidden" style="left:@{{ $index*200 }}px;">@{{ list.name }}</div>
         </div>
-        <div class="content-prevnext">&gt;</div>
+        <div class="content-prevnext next">&gt;</div>
+      </div>
+
+      <h2>EARPHONE</h2>
+      <div class="headphone-content">
+        <div class="content-prevnext prev-e">&lt;</div>
+        <div v-for="list in earphone"  class="content-list-e">
+          <div class="content-list-inner"
+            style="
+            left : @{{ $index*200 }}px;
+            background : url('/img/@{{list.imageurl}}'),url('/img/MDR-Z1000.jpg');
+            background-size: cover;
+            background-position:center;
+            ">
+          </div>
+          <div class="inner-hidden" style="left:@{{ $index*200 }}px;">@{{ list.name }}</div>
+        </div>
+        <div class="content-prevnext next-e">&gt;</div>
       </div>
     </main>
 
