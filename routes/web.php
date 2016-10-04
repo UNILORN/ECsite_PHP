@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('toppage');
 });
+
+Route::get('/item/{id}', function($id){
+    return view('itempage')->with("name",$id);
+});
