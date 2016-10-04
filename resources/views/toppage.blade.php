@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ECTOP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/temp.css" media="screen">
     <link rel="stylesheet" href="/css/toppage.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Tillana" rel="stylesheet">
@@ -27,9 +29,10 @@
         <li>HOME</li>
         <li>Headphone</li>
         <li>Earphone</li>
+        <li>About</li>
         <p>
-          <input type="text" name="search" value="" placeholder="検索">
-          <input type="submit" name="search_submit" value="検索">
+          <input type="text" name="search" value="" placeholder="Search">
+          <button type="button" name="search_button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </p>
       </ul>
     </nav>
@@ -55,8 +58,8 @@
 
       <h2>EARPHONE</h2>
       <div class="headphone-content">
-        <div class="content-prevnext prev-e">&lt;</div>
-        <div v-for="list in earphone"  class="content-list-e">
+        <div class="content-prevnext prev">&lt;</div>
+        <div v-for="list in earphone"  class="content-list">
           <a href="/item/@{{ list.name }}" class="content-list-inner"
             style="
             left : @{{ $index*200 }}px;
@@ -66,7 +69,7 @@
             "></a>
           <div class="inner-hidden" style="left:@{{ $index*200 }}px;">@{{ list.name }}</div>
         </div>
-        <div class="content-prevnext next-e">&gt;</div>
+        <div class="content-prevnext next">&gt;</div>
       </div>
     </main>
 
