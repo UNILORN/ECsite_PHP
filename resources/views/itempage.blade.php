@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="css/temp.css" media="screen">
-    <link rel="stylesheet" href="css/itempage.css" media="screen">
+    <link rel="stylesheet" href="/css/temp.css" media="screen">
+    <link rel="stylesheet" href="/css/itempage.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Tillana" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-  
+
   </head>
   <body>
 
