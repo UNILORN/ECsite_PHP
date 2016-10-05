@@ -9,13 +9,14 @@ $(function(){
 
   $.ajax({
     type:'GET',
-    url:'/items',
+    url:'/api/items',
     success:function(response){
       response.forEach(function(value,index){
         var rat = {
           id:value["ITEM_ID"],
           name:value["name"],
-          imageurl:value["imageurl"]
+          imageurl:value["imageurl"],
+          price:value["price"]
         }
         if (value["type"] == "head"){ vm.$data.headphone.push(rat); }
         else{ vm.$data.earphone.push(rat); }
@@ -38,7 +39,6 @@ $(function(){
     var widthnum = $(this).parent().find(".content-list").length * 200;
     var windownum= $(window).width();
     leftnum = Number(leftnum.replace("px",""));
-    console.log(windownum);
     if (windownum - leftnum > windownum){ leftnum += windownum/3; }
     $(this).parent().find(".content-list").css("left",leftnum+"px");
   });
@@ -56,7 +56,7 @@ $(function(){
     var text = $(".search_text").val();
     $.ajax({
       type:'GET',
-      url:'/items/'+text,
+      url:'/api/items/'+text,
       success:function(response){
         vm.$data.earphone = [];
         vm.$data.headphone = [];

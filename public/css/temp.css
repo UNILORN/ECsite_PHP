@@ -58,10 +58,15 @@ nav ul{
 }
 nav ul li{
   position: relative;
+  padding: 0;
+  margin: 0;
   display:table-cell;
   opacity: 1;
   vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
 }
+
 nav ul p{
   font-family: initial;
   position: relative;
@@ -75,6 +80,8 @@ nav ul li:hover{
 }
 
 footer{
+  position: relative;
+  top:0;
   height: 200px;
   width: 100%;
   background-color: #212121;

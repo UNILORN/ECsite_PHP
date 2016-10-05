@@ -45,14 +45,19 @@ main h2{
 }
 
 .inner-hidden{
+  font-family: 'Archivo Narrow', sans-serif;
   position: relative;
-  top: 180px;
+  top: 140px;
   width: 200px;
-  height: 20px;
+  height: 60px;
   color:#000;
   transition: opacity 0.4s ease;
   opacity: 1;
   background-color: rgba(255,255,255,0.7);
+}
+.inner-hidden .item-name{
+  margin:0;
+  font-size: 25px;
 }
 .content-prevnext{
   position:relative;
