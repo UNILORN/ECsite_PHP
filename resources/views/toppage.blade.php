@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Tillana" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-    <script src="js/toppage.js"></script>
+    <script src="/js/toppage.js"></script>
   </head>
   <body>
 
@@ -31,8 +31,8 @@
         <li>Earphone</li>
         <li>About</li>
         <p>
-          <input type="text" name="search" value="" placeholder="Search">
-          <button type="button" name="search_button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          <input class="search_text" type="text" name="search" value="" placeholder="Search">
+          <input class="search_button" type="submit" name="search_button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </p>
       </ul>
     </nav>
@@ -43,7 +43,7 @@
       <div class="headphone-content">
         <div class="content-prevnext prev">&lt;</div>
         <div v-for="list in headphone"  class="content-list">
-          <a href="/item/@{{ list.name }}" class="content-list-inner"
+          <a href="/item/head/@{{ list.id }}" class="content-list-inner"
             style="
             left : @{{ $index*200 }}px;
             background : url('/img/@{{list.imageurl}}'),url('/img/MDR-Z1000.jpg');
@@ -60,7 +60,7 @@
       <div class="headphone-content">
         <div class="content-prevnext prev">&lt;</div>
         <div v-for="list in earphone"  class="content-list">
-          <a href="/item/@{{ list.name }}" class="content-list-inner"
+          <a href="/item/ear/@{{ list.id }}" class="content-list-inner"
             style="
             left : @{{ $index*200 }}px;
             background : url('/img/@{{list.imageurl}}'),url('/img/MDR-Z1000.jpg');

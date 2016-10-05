@@ -36,7 +36,13 @@
 
 
     <main>
-
+      <div class="item-img">
+        <img src="/img/{{$data['imageurl']}}" alt="" />
+      </div>
+      <div class="item-content">
+        <h2>{{$data["name"]}}</h2>
+        <h1 class="price" style="color:blue">{{$data["price"]}}円</h1>
+      </div>
     </main>
 
     <footer>

@@ -1,43 +1,37 @@
 $(function(){
-  new Vue({
+  var vm = new Vue({
     el: 'main',
     data: {
-      headphone :[
-        { imageurl: "MDR-1A_B.jpg",
-          name: "MDR-1A"},
-        { imageurl: "MDR-Z1000.jpg",
-          name: "MDR-Z1000"},
-        { imageurl: "MDR-Z1R.jpg",
-          name: "MDR-Z1R"},
-        { imageurl: "JVC1.jpg",
-          name: "MDR-1A"},
-        { imageurl: "T12nd.jpg",
-          name: "T 1 2nd Generation"}
-      ],
-      earphone :[
-        { imageurl: "XBA-Z5.jpg",
-          name: "XBA-Z5"},
-        { imageurl: "XBA-A3.jpg",
-          name: "XBA-A3"},
-        { imageurl: "XBA-A2.jpg",
-          name: "XBA-A2"},
-        { imageurl: "XBA-300.jpg",
-          name: "XBA-300"},
-        { imageurl: "MDR-EX1000.jpg",
-          name: "MDR-EX1000"},
-        { imageurl: "MDR-XB90EX.jpg",
-          name: "MDR-XB90EX"},
-        { imageurl: "W800BT.jpg",
-          name: "W800BT"}
-      ]
+      headphone :[],
+      earphone :[]
     }
   });
+
+  $.ajax({
+    type:'GET',
+    url:'/items',
+    success:function(response){
+      response.forEach(function(value,index){
+        var rat = {
+          id:value["ITEM_ID"],
+          name:value["name"],
+          imageurl:value["imageurl"]
+        }
+        if (value["type"] == "head"){ vm.$data.headphone.push(rat); }
+        else{ vm.$data.earphone.push(rat); }
+      });
+    }
+  });
+
+
+
 
   $(".content-list-inner").hover(function(){
     $(this).parent().find(".inner-hidden").css("opacity","1");
   },function(){
     $(this).parent().find(".inner-hidden").css("opacity","0");
   });
+
 
   $(".prev").click(function(){
     var leftnum  = $(this).parent().find(".content-list").css("left");
@@ -58,4 +52,25 @@ $(function(){
     $(this).parent().find(".content-list").css("left",leftnum+"px");
   });
 
+  $(".search_button").click(function(){
+    var text = $(".search_text").val();
+    $.ajax({
+      type:'GET',
+      url:'/items/'+text,
+      success:function(response){
+        vm.$data.earphone = [];
+        vm.$data.headphone = [];
+
+        response.forEach(function(value,index){
+          var rat = {
+            id:value["ITEM_ID"],
+            name:value["name"],
+            imageurl:value["imageurl"]
+          }
+          if (value["type"] == "head"){ vm.$data.headphone.push(rat); }
+          else{ vm.$data.earphone.push(rat); }
+        });
+      }
+    });
+  });
 });
