@@ -65,7 +65,8 @@ $(function(){
           var rat = {
             id:value["ITEM_ID"],
             name:value["name"],
-            imageurl:value["imageurl"]
+            imageurl:value["imageurl"],
+            price:value["price"]
           }
           if (value["type"] == "head"){ vm.$data.headphone.push(rat); }
           else{ vm.$data.earphone.push(rat); }
