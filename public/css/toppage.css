@@ -75,3 +75,15 @@ main h2{
 .content-prevnext:hover{
   opacity: 0.8;
 }
+
+.expand-left-transition, .expand-right-transition {
+  transition: all 1s ease;
+}
+.expand-left-enter , .expand-left-leave{
+  left : -200px;
+  opacity: 0;
+}
+.expand-right-enter , .expand-right-leave{
+  left:500px ;
+  opacity: 0;
+}

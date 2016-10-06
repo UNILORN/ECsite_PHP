@@ -19,7 +19,7 @@
   <h2>HEADPHONE</h2>
   <div class="headphone-content">
     <div class="content-prevnext prev">&lt;</div>
-    <div v-for="list in phone" v-if="list.type == 'head'"class="content-list">
+    <div v-for="list in phone" v-if="list.type == 'head'" transition="expand-left" class="content-list">
       <template v-if="list.type == 'head'">
         <a href="/item/@{{ list.id }}" class="content-list-inner"
           style="
@@ -41,8 +41,7 @@
   <h2>EARPHONE</h2>
   <div class="headphone-content">
     <div class="content-prevnext prev">&lt;</div>
-    <template v-for="list in phone" v-if="list.type=='ear' " >
-      <div class="content-list">
+      <div v-for="list in phone" v-if="list.type=='ear' " transition="expand-right" class="content-list">
         <a href="/item/@{{ list.id }}" class="content-list-inner"
           style="
           left : @{{* (earcnt += 1)*200 }}px;
@@ -55,7 +54,6 @@
           <p class="item-price">¥@{{ list.price}}</p>
         </div>
       </div>
-    </template>
     <div class="content-prevnext next">&gt;</div>
   </div>
 </main>

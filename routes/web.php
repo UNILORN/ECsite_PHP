@@ -21,17 +21,11 @@ Route::get('/', function() {
   return view('toppage');
 });
 
-Route::get('/headphone',function(){
-  return view('headphone');
-});
-Route::get('/earphone',function(){
-  return view('earphone');
-});
-Route::get('/about' ,function(){
-  return view('about');
-});
+Route::get('/headphone','HeadphoneController@index');
+Route::get('/earphone','EarphoneController@index');
+Route::get('/about' ,'AboutController@index');
 
-Route::get('/item/{id}', function($id){
+Route::get('/item', function($id){
   $data = MST_ITEM::where('ITEM_ID',$id)
               ->with('company')
               ->get()->toArray();
@@ -45,9 +39,9 @@ Route::get('/api/items', function(){
 Route::get('/api/items/{name}', function($name){
   $company = MST_COMPANY::where('name',$name)
             ->get();
-  if(empty($company[0]->COMPANY_ID)){ $company[0]->COMPANY_ID = -1; }
+  if(empty($company->COMPANY_ID)){ $company->COMPANY_ID = -1; }
   $itemlist = MST_ITEM::where('name','like','%'.$name.'%')
-            ->orWhere('COMPANY_ID',$company[0]->COMPANY_ID)
+            ->orWhere('COMPANY_ID',$company->COMPANY_ID)
             ->get()
             ->toArray();
   return response()->json($itemlist);

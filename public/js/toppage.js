@@ -6,6 +6,9 @@ $(function(){
       headcnt :-1,
       earcnt :-1,
       content_width:200
+    },
+    method:{
+
     }
   });
 
@@ -58,17 +61,19 @@ $(function(){
       type:'GET',
       url:'/api/items/'+text,
       success:function(response){
-        vm.$data.phone = [];
+        var rat = [];
         response.forEach(function(value,index){
-          var rat = {
+          rat.push({
             id:value["ITEM_ID"],
             name:value["name"],
             imageurl:value["imageurl"],
             price:value["price"],
             type:value["type"]
-          }
+          });
         });
-        vm.$data.earphone.$set(rat);
+        vm.$set('headcnt',-1);
+        vm.$set('earcnt',-1);
+        vm.$set('phone',rat);
       }
     });
   });
