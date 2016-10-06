@@ -31,7 +31,7 @@
         </a>
         <div class="inner-hidden" style="left:@{{* headcnt*content_width }}px;">
           <p class="item-name">@{{ list.name }}</p>
-          <p class="item-price">¥@{{ list.price}}</p>
+          <p class="item-price">¥@{{ list.price }}</p>
         </div>
       </template>
     </div>

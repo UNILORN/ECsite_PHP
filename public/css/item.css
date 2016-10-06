@@ -18,6 +18,7 @@ body{
   left: 0;
   margin: 0;
   padding: 0;
+  padding-top: 30px;
   width: 50%;
   height: 100%;
 }
@@ -27,7 +28,6 @@ body{
 
 }
 .item-content-inner{
-  font-family: 'Archivo Narrow', sans-serif;
   position:absolute;
   margin: 0;
   padding:0;
@@ -35,4 +35,52 @@ body{
   left:50%;
   width: 50%;
   height: 80vh;
+}
+.item-content-inner .item-name{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 35px;
+  margin-top: 70px;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: table;
+  width: 85%;
+  left:15%;
+  color: white;
+  background-color:#212121;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.4);
+  height: 60px;
+}
+
+.item-name h2{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.price{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 35px;
+  margin-top: 70px;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: table;
+  width: 70%;
+  left:30%;
+  background-color:#F5F5F5;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.4);
+  height: 60px;
+}
+
+.buy{
+  position:relative;
+  font-size: 80px;
+  margin-top: 70px;
+  width:80%;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.4);
+  background-color: #FFCC80;
+  height:200px;
+}
+.buy:active{
+  box-shadow: 0px 10px 10px rgba(0,0,0,0);
 }

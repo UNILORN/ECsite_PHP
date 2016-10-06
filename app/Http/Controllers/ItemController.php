@@ -19,7 +19,7 @@ class ItemController extends Controller
     $data = MST_ITEM::where('ITEM_ID',$id)
                 ->with('company')
                 ->get()->toArray();
-
+    
     return view('itempage')->with(["data" => $data[0]]);
   }
 }

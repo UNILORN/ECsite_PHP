@@ -18,8 +18,13 @@
       <img src="/img/{{$data['imageurl']}}" alt="" />
     </div>
     <div class="item-content-inner">
-      <h2>{{$data['company']['name']}} {{$data['name']}}</h2>
-      <h1 class="price">{{$data['price']}}円</h1>
+      <div class="item-name">
+        <h2>{{$data['company']['name']}} {{$data['name']}}</h2>
+      </div>
+      <div class="price">
+        <h1>¥{{number_format($data['price'])}}</h1>
+      </div>
+      <button class="buy" type="button" name="button">Buy Now !!!</button>
     </div>
   </div>
 </main>
