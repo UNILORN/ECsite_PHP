@@ -38,10 +38,10 @@ Route::get('/api/items', function(){
 
 Route::get('/api/items/{name}', function($name){
   $company = MST_COMPANY::where('name',$name)
-            ->get();
-  if(empty($company->COMPANY_ID)){ $company->COMPANY_ID = -1; }
+            ->get()->toArray();
+
   $itemlist = MST_ITEM::where('name','like','%'.$name.'%')
-            ->orWhere('COMPANY_ID',$company->COMPANY_ID)
+            ->CompanyID($company[0]['COMPANY_ID'])
             ->get()
             ->toArray();
   return response()->json($itemlist);
