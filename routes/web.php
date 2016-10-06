@@ -25,24 +25,7 @@ Route::get('/headphone','HeadphoneController@index');
 Route::get('/earphone','EarphoneController@index');
 Route::get('/about' ,'AboutController@index');
 
-Route::get('/item', function($id){
-  $data = MST_ITEM::where('ITEM_ID',$id)
-              ->with('company')
-              ->get()->toArray();
-  return view('itempage')->with(["data" => $data[0]]);
-});
+Route::get('/item/{id}','ItemController@show');
 
-Route::get('/api/items', function(){
-  return response() -> json(MST_ITEM::all());
-});
-
-Route::get('/api/items/{name}', function($name){
-  $company = MST_COMPANY::where('name',$name)
-            ->get()->toArray();
-
-  $itemlist = MST_ITEM::where('name','like','%'.$name.'%')
-            ->CompanyID($company[0]['COMPANY_ID'])
-            ->get()
-            ->toArray();
-  return response()->json($itemlist);
-});
+Route::get('/api/items','API_ItemController@index');
+Route::get('/api/items/{name}','API_ItemController@show');
