@@ -2,8 +2,10 @@ $(function(){
   var vm = new Vue({
     el: 'main',
     data: {
-      headphone :[],
-      earphone :[]
+      phone :[],
+      headcnt :-1,
+      earcnt :-1,
+      content_width:200
     }
   });
 
@@ -11,21 +13,19 @@ $(function(){
     type:'GET',
     url:'/api/items',
     success:function(response){
+      var rat = [];
       response.forEach(function(value,index){
-        var rat = {
+        rat.push({
           id:value["ITEM_ID"],
           name:value["name"],
           imageurl:value["imageurl"],
-          price:value["price"]
-        }
-        if (value["type"] == "head"){ vm.$data.headphone.push(rat); }
-        else{ vm.$data.earphone.push(rat); }
+          price:value["price"],
+          type:value["type"]
+        });
       });
+      vm.$set('phone',rat);
     }
   });
-
-
-
 
   $(".content-list-inner").hover(function(){
     $(this).parent().find(".inner-hidden").css("opacity","1");
@@ -58,19 +58,17 @@ $(function(){
       type:'GET',
       url:'/api/items/'+text,
       success:function(response){
-        vm.$data.earphone = [];
-        vm.$data.headphone = [];
-
+        vm.$data.phone = [];
         response.forEach(function(value,index){
           var rat = {
             id:value["ITEM_ID"],
             name:value["name"],
             imageurl:value["imageurl"],
-            price:value["price"]
+            price:value["price"],
+            type:value["type"]
           }
-          if (value["type"] == "head"){ vm.$data.headphone.push(rat); }
-          else{ vm.$data.earphone.push(rat); }
         });
+        vm.$data.earphone.$set(rat);
       }
     });
   });

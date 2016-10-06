@@ -19,19 +19,21 @@
   <h2>HEADPHONE</h2>
   <div class="headphone-content">
     <div class="content-prevnext prev">&lt;</div>
-    <div v-for="list in headphone"  class="content-list">
-      <a href="/item/head/@{{ list.id }}" class="content-list-inner"
-        style="
-        left : @{{ $index*200 }}px;
-        background : url('/img/@{{list.imageurl}}'),url('/img/MDR-Z1000.jpg');
-        background-size: cover;
-        background-position:center;
-        ">
-      </a>
-      <div class="inner-hidden" style="left:@{{ $index*200 }}px;">
-        <p class="item-name">@{{ list.name }}</p>
-        <p class="item-price">¥@{{ list.price}}</p>
-      </div>
+    <div v-for="list in phone" v-if="list.type == 'head'"class="content-list">
+      <template v-if="list.type == 'head'">
+        <a href="/item/@{{ list.id }}" class="content-list-inner"
+          style="
+          left : @{{* (headcnt += 1)*200 }}px;
+          background : url('/img/@{{list.imageurl}}'),url('/img/MDR-Z1000.jpg');
+          background-size: cover;
+          background-position:center;
+          ">
+        </a>
+        <div class="inner-hidden" style="left:@{{* headcnt*content_width }}px;">
+          <p class="item-name">@{{ list.name }}</p>
+          <p class="item-price">¥@{{ list.price}}</p>
+        </div>
+      </template>
     </div>
     <div class="content-prevnext next">&gt;</div>
   </div>
@@ -39,19 +41,21 @@
   <h2>EARPHONE</h2>
   <div class="headphone-content">
     <div class="content-prevnext prev">&lt;</div>
-    <div v-for="list in earphone"  class="content-list">
-      <a href="/item/ear/@{{ list.id }}" class="content-list-inner"
-        style="
-        left : @{{ $index*200 }}px;
-        background : url('/img/@{{list.imageurl}}'),url('/img/MDR-Z1000.jpg');
-        background-size: cover;
-        background-position:center;
-        "></a>
-      <div class="inner-hidden" style="left:@{{ $index*200 }}px;">
-        <p class="item-name">@{{ list.name }}</p>
-        <p class="item-price">¥@{{ list.price}}</p>
+    <template v-for="list in phone" v-if="list.type=='ear' " >
+      <div class="content-list">
+        <a href="/item/@{{ list.id }}" class="content-list-inner"
+          style="
+          left : @{{* (earcnt += 1)*200 }}px;
+          background : url('/img/@{{list.imageurl}}'),url('/img/MDR-Z1000.jpg');
+          background-size: cover;
+          background-position:center;
+          "></a>
+        <div class="inner-hidden" style="left:@{{* earcnt*content_width }}px;">
+          <p class="item-name">@{{ list.name }}</p>
+          <p class="item-price">¥@{{ list.price}}</p>
+        </div>
       </div>
-    </div>
+    </template>
     <div class="content-prevnext next">&gt;</div>
   </div>
 </main>
