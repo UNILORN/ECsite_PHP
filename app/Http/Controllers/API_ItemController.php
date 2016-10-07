@@ -18,6 +18,8 @@ class API_ItemController extends Controller
       $company = MST_COMPANY::where('name',$name)
                 ->get()->toArray();
 
+      if(empty($company[0])){ $company[0]['COMPANY_ID'] = -1; } 
+
       $itemlist = MST_ITEM::where('name','like','%'.$name.'%')
                 ->CompanyID($company[0]['COMPANY_ID'])
                 ->get()
