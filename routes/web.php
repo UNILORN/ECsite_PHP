@@ -24,6 +24,7 @@ Route::get('/', function() {
 Route::get('/headphone','HeadphoneController@index');
 Route::get('/earphone','EarphoneController@index');
 Route::get('/about' ,'AboutController@index');
+Route::get('/cart','CartController@index');
 
 Route::get('/item/{id}','ItemController@show');
 
