@@ -35,8 +35,7 @@
         <li onclick="location.href='/earphone'">Earphone</li>
         <li onclick="location.href='/about'">About</li>
         <p>
-          <input class="search_text" type="text" name="search" value="" placeholder="Search">
-          <button class="search_button" type="button" name="search_button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          @yield('search')
         </p>
       </ul>
     </nav>

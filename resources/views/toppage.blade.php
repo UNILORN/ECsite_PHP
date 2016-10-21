@@ -9,7 +9,12 @@
 
 @section('addscript')
   <script src="/js/toppage.js" type="text/javascript"></script>
-@endsection('')
+@endsection
+
+@section('search')
+    <input class="search_text" type="text" name="search" value="" placeholder="Search">
+    <button class="search_button" type="button" name="search_button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+@endsection
 
 
 @section('content')
