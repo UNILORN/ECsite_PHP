@@ -16,68 +16,20 @@
   <main>
     <form class="cart_form" action="index.html" method="post">
       <ul>
-        <li>
-          <div class="img"><img src="/img/MDR-Z1000.jpg" alt="" /></div>
+        <li v-for="items in item">
+          <div class="img"><img src="/img/@{{items.imageurl}}" alt="" /></div>
           <div class="desc">
-            <p>メーカー名</p>
-            <p>商品名</p>
-            <p>在庫</p>
-            <p>消去</p>
+            <p class="company">@{{items.company}}</p>
+            <p class="name">@{{items.name}}</p>
+            <p class="itemnum">残り：@{{items.num}}</p>
+            <p class="delete">Delete</p>
           </div>
           <div class="price">
-            <p>価格</p>
-            <p>消費税</p>
+            <p class="price_text">¥@{{items.price}}</p>
+            <p class="tax">内税¥@{{items.price * 0.08}}</p>
           </div>
           <div class="qt">
-            <input type="math" name="name" value="">
-          </div>
-        </li>
-        <li>
-          <div class="img"><img src="/img/MDR-Z1000.jpg" alt="" /></div>
-          <div class="desc">
-            <p>メーカー名</p>
-            <p>商品名</p>
-            <p>在庫</p>
-            <p>消去</p>
-          </div>
-          <div class="price">
-            <p>価格</p>
-            <p>消費税</p>
-          </div>
-          <div class="qt">
-            <input type="math" name="name" value="">
-          </div>
-        </li>
-        <li>
-          <div class="img"><img src="/img/MDR-Z1000.jpg" alt="" /></div>
-          <div class="desc">
-            <p>メーカー名</p>
-            <p>商品名</p>
-            <p>在庫</p>
-            <p>消去</p>
-          </div>
-          <div class="price">
-            <p>価格</p>
-            <p>消費税</p>
-          </div>
-          <div class="qt">
-            <input type="math" name="name" value="">
-          </div>
-        </li>
-        <li>
-          <div class="img"><img src="/img/MDR-Z1000.jpg" alt="" /></div>
-          <div class="desc">
-            <p>メーカー名</p>
-            <p>商品名</p>
-            <p>在庫</p>
-            <p>消去</p>
-          </div>
-          <div class="price">
-            <p>価格</p>
-            <p>消費税</p>
-          </div>
-          <div class="qt">
-            <input type="math" name="name" value="">
+            <input class="qt_select" v-model="items.pricenum" type="number" name="num" value="" placeholder="個数" min="0" max="@{{items.num}}">
           </div>
         </li>
       </ul>
@@ -86,9 +38,12 @@
         <div class="allcrean"></div>
         <div class="sumprice">
           <p>合計金額</p>
+          <p class="sumtext">¥@{{sumprice}}</p>
+          <p class="uti">内税¥@{{sumprice * 0.08}}</p>
         </div>
         <div class="sumqt">
           <p>合計個数</p>
+          <p class="sumtext">@{{sumnum}}</p>
         </div>
       </div>
     </form>

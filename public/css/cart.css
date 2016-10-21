@@ -1,4 +1,5 @@
 form{
+  
   position: relative;
   width: 80%;
   height: auto;
@@ -9,10 +10,6 @@ form{
   margin-top: 40px;
   margin-bottom: 40px;
 }
-form ul{
-
-}
-
 
 .cart_form{
 }
@@ -43,10 +40,23 @@ form ul{
   width:40%;
   box-sizing: border-box;
 }
-
 .desc p{
   margin: 0;
   padding: 0;
+}
+.company{
+  font-size: 15px;
+}
+.name{
+  font-size: 25px;
+}
+.itemnum{
+  color: #428f99;
+  font-size: 15px;
+}
+.delete{
+  font-size: 15px;
+
 }
 
 .price{
@@ -55,17 +65,22 @@ form ul{
   box-sizing: border-box;
   padding-right:10px;
 }
+.price p{
+  margin: 0;
+}
+.price .price_text{
+  font-size: 25px;
+  color: #D1102C;
+}
 .qt{
+  padding-left: 20px;
   width: 20%;
   box-sizing: border-box;
 }
-
-.result{
-  height: 100px;
-  width: 100%;
-  display:table;
-
+.qt input{
+  width: 50px;
 }
+
 .result > div{
   display:table-cell;
 }
@@ -80,4 +95,18 @@ form ul{
 }
 .sumqt{
   width: 20%;
+}
+.result{
+  height: 100px;
+  width: 100%;
+  display:table;
+
+}
+.result div{
+  display:table-cell;
+  vertical-align: middle;
+}
+.sumtext{
+  font-size: 20px;
+  color: #D1102C;
 }

@@ -11,7 +11,9 @@ use App\Models\MST_COMPANY;
 class API_ItemController extends Controller
 {
     public function index(){
-      return response() -> json(MST_ITEM::all());
+      $data = MST_ITEM::with('company')
+          ->get();
+      return response() -> json($data);
     }
 
     public function type($type){
