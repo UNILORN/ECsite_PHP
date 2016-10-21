@@ -21,12 +21,13 @@ Route::get('/', function() {
   return view('toppage');
 });
 
-Route::get('/headphone','HeadphoneController@index');
-Route::get('/earphone','EarphoneController@index');
+Route::get('/headphone','PhoneController@head');
+Route::get('/earphone','PhoneController@ear');
 Route::get('/about' ,'AboutController@index');
 Route::get('/cart','CartController@index');
 
 Route::get('/item/{id}','ItemController@show');
 
 Route::get('/api/items','API_ItemController@index');
+Route::get('/api/items/type/{type}','API_ItemController@type');
 Route::get('/api/items/{name}','API_ItemController@show');

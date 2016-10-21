@@ -14,11 +14,15 @@ class API_ItemController extends Controller
       return response() -> json(MST_ITEM::all());
     }
 
+    public function type($type){
+      return response() -> json(MST_ITEM::where('type',$type)->get());
+    }
+
     public function show($name){
       $company = MST_COMPANY::where('name',$name)
                 ->get()->toArray();
 
-      if(empty($company[0])){ $company[0]['COMPANY_ID'] = -1; } 
+      if(empty($company[0])){ $company[0]['COMPANY_ID'] = -1; }
 
       $itemlist = MST_ITEM::where('name','like','%'.$name.'%')
                 ->CompanyID($company[0]['COMPANY_ID'])

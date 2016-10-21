@@ -26,6 +26,7 @@
          <p>EarPhone</p>
        </div>
        <div class=""></div>
+       <div onclick="location.href='/cart'" class="cart">Cart</div>
     </header>
 
     <nav>

@@ -17,7 +17,7 @@ header div{
   text-align: center;
 }
 header .logo-img{
-  font-family: 'Tillana', cursive;
+  font-family: 'Orbitron', sans-serif;
   padding-left: 5px;
   width:200px;
   height:70px;
@@ -31,6 +31,16 @@ header .buildname{
   font-family: 'Orbitron', sans-serif;
   width: 100px;
 }
+header .cart{
+  width: 100px;
+  display: table-cell;
+  font-family: 'Orbitron', sans-serif;
+}
+.cart:hover{
+  background-color: #333333;
+  cursor: pointer;
+}
+
 .buildname p{
   font-size: 12px;
   margin:0;
