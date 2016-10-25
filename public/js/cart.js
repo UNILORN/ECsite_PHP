@@ -12,8 +12,6 @@ $(function(){
         var that = this;
         that.sumnum = 0;
         that.sumprice = 0;
-        sumnum = 0;
-        sumprice = 0;
         Object.keys(obj).forEach(function(key){
           if( obj[key]["pricenum"] != ""){
             that.sumnum += parseInt(obj[key]["pricenum"]);
