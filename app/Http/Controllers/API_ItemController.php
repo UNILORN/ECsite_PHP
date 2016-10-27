@@ -32,4 +32,25 @@ class API_ItemController extends Controller
                 ->toArray();
       return response()->json($itemlist);
     }
+
+    public function cartitem(){
+      $cartitem = session()->get('cart',[]);
+      $itemlistid = [];
+      foreach($cartitem as $value){
+        $itemlistid[] = $value['itemid'];
+      }
+      $responselist = MST_ITEM::whereIn('ITEM_ID',$itemlistid)
+        ->with('company')
+        ->get()
+        ->toArray();
+
+      foreach($responselist as $reskey => $resvalue){
+        foreach ($cartitem as $cartkey => $cartvalue) {
+          if($resvalue['ITEM_ID'] == $cartvalue['itemid']){
+            $responselist[$reskey]['pricenum'] = $cartvalue['num'];
+          }
+        }
+      }
+      return response()->json($responselist);
+    }
 }

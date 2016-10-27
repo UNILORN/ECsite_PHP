@@ -24,7 +24,7 @@ $(function(){
 
   $.ajax({
     type:'GET',
-    url:'/api/items',
+    url:'/api/items/cart',
     success:function(response){
       var rat = [];
       response.forEach(function(value,index){
@@ -43,13 +43,13 @@ $(function(){
           type:value["type"],
           company:company_obj,
           num:value["num"],
-          pricenum:0
+          pricenum:value["pricenum"]
         });
       });
       vm.$set('item',rat);
+      vm.sum();
     }
   });
-
   $('.cart_form').change(function(){
     vm.sum();
   })

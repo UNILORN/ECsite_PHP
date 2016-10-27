@@ -22,14 +22,14 @@
             <p class="company">@{{items.company}}</p>
             <p class="name">@{{items.name}}</p>
             <p class="itemnum">残り：@{{items.num}}</p>
-            <p class="delete">Delete</p>
+            <p class="delete"><a href="/cart/@{{items.id}}">Delete</a></p>
           </div>
           <div class="price">
             <p class="price_text">¥@{{items.price}}</p>
             <p class="tax">内税¥@{{items.price * 0.08}}</p>
           </div>
           <div class="qt">
-            <input class="qt_select" v-model="items.pricenum" type="number" name="num" value="" placeholder="個数" min="0" max="@{{items.num}}">
+            <input class="qt_select" v-model="items.pricenum" type="number" name="num" value="@{{items.pricenum}}" placeholder="個数" min="0" max="@{{items.num}}">
           </div>
         </li>
       </ul>

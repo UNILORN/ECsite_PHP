@@ -24,7 +24,11 @@
       <div class="price">
         <h1>¥{{number_format($data['price'])}}</h1>
       </div>
-      <button class="buy" type="button" name="button">Buy Now !!!</button>
+      <form class="" action="/cart" method="post">
+        {{csrf_field()}}
+        <input type="hidden" name="id" value="{{$data['ITEM_ID']}}">
+        <input class="buy" type="submit" name="button" value="Buy Now !!!">
+      </form>
     </div>
   </div>
 </main>

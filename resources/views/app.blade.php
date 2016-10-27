@@ -36,6 +36,9 @@
         <li onclick="location.href='/earphone'">Earphone</li>
         <li onclick="location.href='/about'">About</li>
         <p>
+          
+        </p>
+        <p>
           @yield('search')
         </p>
       </ul>
