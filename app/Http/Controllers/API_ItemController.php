@@ -51,6 +51,7 @@ class API_ItemController extends Controller
           }
         }
       }
+
       return response()->json($responselist);
     }
 }

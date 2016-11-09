@@ -36,5 +36,4 @@ Route::get('/api/items/cart','API_ItemController@cartitem');
 Route::get('/api/items/type/{type}','API_ItemController@type');
 Route::get('/api/items/{name}','API_ItemController@show');
 
-
 Route::get('/home', 'HomeController@index');
