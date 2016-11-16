@@ -17,10 +17,18 @@
 
   <main>
     <div v-for="items in item" class="">
-      <p>
+        <li>
+          <div class="item_image">
 
+          </div>
+          <ul>
+            <li>@{{items.company}}</li>
+          </ul>
+          <div class="">
+
+          </div>
+        </li>
         @{{items.name}}
-      </p>
     </div>
 
   </main>
